@@ -1,19 +1,31 @@
-<div class="jumbotron text-center" style="background-image: url(https://lovingnewyork.de/wp-content/uploads/2015/09/Penthouse808-Rooftop-bar-New-York-Queens08-1600x800.jpg);">
+<div class="jumbotron text-center" style="background-image: url(https://lovingnewyork.de/wp-content/uploads/2015/09/Penthouse808-Rooftop-bar-New-York-Queens08-1600x800.jpg)">
     <h1 class="page-header">Mister Cocktail</h1>
     <p>find your perfect cocktail</p>
 </div>
 <br>
 <div class="container">
     <div class="well col-center">
-        <div class="row row-cols-3 text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 text-center">
             <% @cocktails.each do |cocktail| %>
             <div class="col">
-                <h3 ">
-                    <%= cocktail.name %>
-                </h3>
-                <%= link_to cocktail.name, cocktail_path(cocktail), :class => 'btn btn-dark' %>
+                <div class="card" style="width: 18rem;">
+                  <img src="https://lovingnewyork.de/wp-content/uploads/2015/09/Penthouse808-Rooftop-bar-New-York-Queens08-1600x800.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= cocktail.name %></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#"><%= link_to cocktail.name, cocktail_path(cocktail), :class => 'btn btn-dark' %></a>
+                  </div>
+                </div>
+
             </div>
             <% end %>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
+
+
+
