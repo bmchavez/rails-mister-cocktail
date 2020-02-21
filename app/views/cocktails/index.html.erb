@@ -4,12 +4,16 @@
 </div>
 <br>
 <div class="container">
-    <% @cocktails.each do |cocktail| %>
     <div class="well col-center">
-        <h3>
-            <%= cocktail.name %>
-        </h3>
-        <%= link_to cocktail.name, cocktail_path(cocktail), :class => 'btn btn-dark' %>
+        <div class="row row-cols-3 text-center">
+            <% @cocktails.each do |cocktail| %>
+            <div class="col">
+                <h3 ">
+                    <%= cocktail.name %>
+                </h3>
+                <%= link_to cocktail.name, cocktail_path(cocktail), :class => 'btn btn-dark' %>
+            </div>
+            <% end %>
+        </div>
     </div>
-    <% end %>
 </div>
