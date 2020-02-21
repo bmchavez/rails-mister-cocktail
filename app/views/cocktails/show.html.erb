@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="text-center">
+        <%= @cocktail.name %>
+    </h1>
+    <hr>
+    <h2>Ingredients</h2>
+    <% @cocktail.doses.each do |dose| %>
+    <p>
+        <ul>
+            <li class="list-unstyled well">
+                <%= dose.description %>
+                <%= dose.ingredient.name %>
+                <%= link_to "Delete dose",cocktail_dose_path(@cocktail, dose),
+                method: :delete,
+                data: {confirm: 'Are you sure?'},
+                :class => 'btn btn-danger' %>
+            </li>
+        </ul>
+    </p>
+    <% end %>
+    <br>
+    <hr>
+    <p>
+        <%= link_to "add a dose", new_cocktail_dose_path(@cocktail, @dose), :class => 'btn btn-primary' %>
+    </p>
+</div>

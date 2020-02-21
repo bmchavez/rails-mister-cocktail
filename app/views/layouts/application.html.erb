@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>RailsMisterCocktail</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-    <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
-    <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
-  </body>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Mister Cocktail</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <%= link_to "Home", home_path %>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li>
+                    <%= link_to "Create Cocktail", new_cocktail_path %>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+        <%= yield %>
+        <%= javascript_include_tag "application" %>
+        <!-- from app/assets/javascripts/application.js -->
+        <%= javascript_pack_tag "application" %>
+        <!-- from app/javascript/packs/application.js -->
+
+
+</body>
+
 </html>

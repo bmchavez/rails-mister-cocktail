@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Add a Cocktail</h1>
+    <%= form_for [@cocktail] do |f| %>
+    <% if @cocktail.errors.any? %>
+    <% @cocktail.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger">
+        <%= msg %>
+    </div>
+    <% end %>
+    <% end %>
+    <p>
+        <%= f.label :name %>
+        <%= f.text_field(:name, {:class => 'form-inline form-control'}) %>
+    </p>
+    <%= f.submit({:class => 'btn btn-primary'}) %>
+    <% end %>
+</div>
+</div>

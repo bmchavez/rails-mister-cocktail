@@ -1,0 +1,15 @@
+<div class="jumbotron text-center" style="background-image: url(https://lovingnewyork.de/wp-content/uploads/2015/09/Penthouse808-Rooftop-bar-New-York-Queens08-1600x800.jpg);">
+    <h1 class="page-header">Mister Cocktail</h1>
+    <p>find your perfect cocktail</p>
+</div>
+<br>
+<div class="container">
+    <% @cocktails.each do |cocktail| %>
+    <div class="well col-center">
+        <h3>
+            <%= cocktail.name %>
+        </h3>
+        <%= link_to cocktail.name, cocktail_path(cocktail), :class => 'btn btn-dark' %>
+    </div>
+    <% end %>
+</div>
